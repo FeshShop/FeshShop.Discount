@@ -1,5 +1,6 @@
 namespace FeshShop.Discounts
 {
+    using FeshShop.Common.Logging;
     using Microsoft.AspNetCore.Hosting;
     using Microsoft.Extensions.Hosting;
 
@@ -7,7 +8,7 @@ namespace FeshShop.Discounts
     {
         public static void Main(string[] args)
             => Host.CreateDefaultBuilder(args)
-                .ConfigureWebHostDefaults(webBuilder => webBuilder.UseStartup<Startup>())
+                .ConfigureWebHostDefaults(webBuilder => webBuilder.UseStartup<Startup>().UseLogging())
                 .Build()
                 .Run();
     }
